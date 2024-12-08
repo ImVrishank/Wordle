@@ -1,16 +1,28 @@
-
+import random
 def linear_search(arr, to_search):
     index = -1
     for item in arr:
         if item == to_search:
             pass
 
+
+
 #boxes :
 #⬜⬜⬜ gray instead of white
 #🟨🟨🟨
 #🟩🟩🟩
 
-word = "hello"
+word_file = open("words.txt", "r") 
+# reading the file 
+words = word_file.read() 
+  
+# replacing end splitting the text  
+# when newline ('\n') is seen. 
+words = words.split("\n") 
+
+word = words[random.randint(0,len(words)-1)]
+
+
 guess = ""
 op = ""
 tries = 0
